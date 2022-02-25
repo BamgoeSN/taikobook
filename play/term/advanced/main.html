@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>고급 - 태고책</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../.././src/general.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../head.html">태고책</a></li><li class="chapter-item expanded affix "><a href="../../../intro.html">서론</a></li><li class="chapter-item expanded affix "><li class="part-title">태고 플레이</li><li class="chapter-item expanded "><a href="../../../play/term/main.html"><strong aria-hidden="true">1.</strong> 용어 설명</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../play/term/basic/main.html"><strong aria-hidden="true">1.1.</strong> 기초</a></li><li class="chapter-item expanded "><a href="../../../play/term/advanced/main.html" class="active"><strong aria-hidden="true">1.2.</strong> 고급</a></li></ol></li><li class="chapter-item expanded "><a href="../../../play/basic/main.html"><strong aria-hidden="true">2.</strong> 기초</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../play/basic/playstyle/main.html"><strong aria-hidden="true">2.1.</strong> 타법</a></li><li class="chapter-item expanded "><a href="../../../play/basic/play/main.html"><strong aria-hidden="true">2.2.</strong> 플레이</a></li></ol></li><li class="chapter-item expanded "><a href="../../../play/intermediate/main.html"><strong aria-hidden="true">3.</strong> 중급</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../play/intermediate/triplet/main.html"><strong aria-hidden="true">3.1.</strong> 3연타</a></li><li class="chapter-item expanded "><a href="../../../play/intermediate/nplet/main.html"><strong aria-hidden="true">3.2.</strong> N연타</a></li><li class="chapter-item expanded "><a href="../../../play/intermediate/stream/main.html"><strong aria-hidden="true">3.3.</strong> 스트림</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">태고책</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="고급"><a class="header" href="#고급">고급</a></h1>
+<p>이 파트는 어느정도 숙련된 사람이 읽는것을 추천합니다. 이 단원을 넘기고 싶으시다면 다음 장으로 넘어가셔도 괜찮습니다.</p>
+<h2 id="비트"><a class="header" href="#비트">비트</a></h2>
+<p align="center"> <img src="./nbeat.jpg"> </p>
+<p><strong>n비트</strong>(4비트, 8비트 등)은 n분음표를 뜻합니다. 즉 4비트는 4분음표만큼의 간격입니다. 위 그림에서 1에 해당하는 간격은 4비트, 2에 해당하는 간격은 8비트, 3에 해당하는 간격은 16비트 입니다.</p>
+<p align="center"> <img src="./third.jpg"> </p>
+<p>12비트의 경우, 4비트를 3개로 나눈 박자입니다.</p>
+<p>4분음표는 한 박자 라고도 표현하는데, (8분음표는 반 박자) 4분음표를 1/1, 8분음표를 1/2, 16분음표를 1/4 로 표현하는 경우도 있습니다. (12비트는 1/3)</p>
+<h2 id="연타"><a class="header" href="#연타">연타</a></h2>
+<p align="center"> <img src="./renta.jpg"> </p>
+<p><strong>연타</strong>(2연타 3연타 등)는 같은 간격의 노트가 2개 이상 연달아 오는 패턴을 의미합니다. 위의 사진은 각각 3연타, 3연타, 5연타 입니다. 영어로는 2연타는 Doublet, 3연타는 Triplet, 그 이상은 N-plet 혹은 N-tuple 혹은 N Tuplet이라고 부릅니다. (주로 N-plet이 사용됨) (부정확함)</p>
+<h2 id="스트림"><a class="header" href="#스트림">스트림</a></h2>
+<p align="center"> <img src="./renta.jpg"> </p>
+<p><strong>스트림</strong>입니다. <strong>기차</strong>라고도 부릅니다. 같은 간격의 노트가 긴 시간동안 연달아 오는 패턴을 의미합니다. 영어로는 Stream이라고 합니다.</p>
+<p align="center"> <img src="./helpstream.jpg"> </p>
+<p><strong>복합스트림</strong> 입니다. <strong>복합 기차</strong>라고도 부릅니다. 스트림 패턴에 추가적으로 박자가 바뀌는 경우 복합 스트림이라고 부릅니다.</p>
+<h2 id="판정-오차-미터"><a class="header" href="#판정-오차-미터">판정 오차 미터</a></h2>
+<p align="center"> <img src="./errormeter.jpg"> </p>
+<p><strong>판정 오차 미터</strong>입니다. 노트를 빠르게 처리한 경우 왼쪽에, 느리게 처리한 경우 오른쪽에 선이 표시됩니다.</p>
+<h2 id="오프셋"><a class="header" href="#오프셋">오프셋</a></h2>
+<p align="center"> <img src="./offset.jpg"> </p>
+<p><strong>오프셋</strong>입니다. 곡의 시작지점입니다. 만약 판정 오차미터가 한 쪽으로 쏠린 경우, -키와 +키를 이용하여 오프셋을 조절할 수 있습니다. 왼쪽으로 쏠린 경우 -키, 오른쪽으로 쏠린경우 +키를 사용하여 조절할 수 있습니다. alt키와 -키를 동시에 눌러서 1ms단위로 조절할 수 있습니다.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../play/term/basic/main.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../../play/basic/main.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../play/term/basic/main.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../../play/basic/main.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

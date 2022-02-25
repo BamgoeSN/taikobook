@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>N연타 - 태고책</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../.././src/general.css">
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../head.html">태고책</a></li><li class="chapter-item expanded affix "><a href="../../../intro.html">서론</a></li><li class="chapter-item expanded affix "><li class="part-title">태고 플레이</li><li class="chapter-item expanded "><a href="../../../play/term/main.html"><strong aria-hidden="true">1.</strong> 용어 설명</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../play/term/basic/main.html"><strong aria-hidden="true">1.1.</strong> 기초</a></li><li class="chapter-item expanded "><a href="../../../play/term/advanced/main.html"><strong aria-hidden="true">1.2.</strong> 고급</a></li></ol></li><li class="chapter-item expanded "><a href="../../../play/basic/main.html"><strong aria-hidden="true">2.</strong> 기초</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../play/basic/playstyle/main.html"><strong aria-hidden="true">2.1.</strong> 타법</a></li><li class="chapter-item expanded "><a href="../../../play/basic/play/main.html"><strong aria-hidden="true">2.2.</strong> 플레이</a></li></ol></li><li class="chapter-item expanded "><a href="../../../play/intermediate/main.html"><strong aria-hidden="true">3.</strong> 중급</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../play/intermediate/triplet/main.html"><strong aria-hidden="true">3.1.</strong> 3연타</a></li><li class="chapter-item expanded "><a href="../../../play/intermediate/nplet/main.html" class="active"><strong aria-hidden="true">3.2.</strong> N연타</a></li><li class="chapter-item expanded "><a href="../../../play/intermediate/stream/main.html"><strong aria-hidden="true">3.3.</strong> 스트림</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">태고책</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="n연타"><a class="header" href="#n연타">N연타</a></h1>
+<p>Oni난이도는 주로 다양한 박자의 16비트 패턴으로 이루어져있습니다.
+그 중 가장 기본적인 패턴이 3연타이고, 난이도가 올라갈수록 5연타, 7연타, 4연타, 2연타 등 여러 패턴이 등장하게 됩니다.</p>
+<p>2연타는 dd, kk, dk, kd 4 종류가 있습니다.
+치는데 큰 어려움은 없지만 dk와 kd를 양손을 이용해서 치는 연습을 하는것을 추천합니다.</p>
+<p>4연타는 ooxx, oxxx, ooox 와 같이 2+2, 1+3, 3+1로 잘라서 읽은 다음 치는것이 정석입니다. 5연타 이상도 마찬가지입니다.</p>
+<p>4연타의 경우, dddk, kkkd와 같은 패턴은 3연타를 치고 난 다음 반대손으로 마지막 노트를 치는 방식으로 처리합니다.</p>
+<p>비슷한 방법으로 kddd, dkkk는 첫번째 노트를 치고나서 반대손으로 시작하여 나머지 3연타를 처리합니다.</p>
+<p>dkkd의 경우에는 d + kkd 혹은 dkk + d 로 읽은다음 처리할 수 있고,
+kddk의 경우에는 kdd + k 혹은 k + ddk 로 읽은다음 처리할 수 있습니다.</p>
+<p>반대손으로 처리해야하는 이유는 노트를 홀수개로 분할하여 처리했기 때문입니다.</p>
+<p>kkdd와 ddkk같은 경우는 kk+dd로 잘라서 읽는데, 이 경우에는 짝수개로 잘랐기 때문에 kk와 dd를 같은손으로 시작하여 처리하면 됩니다.</p>
+<p>5연타도 비슷한 원리로, 자주 쓰이는 패턴을 예시로 들면</p>
+<p>ddkkd -&gt; dd + kk + d 혹은 dd + kkd
+kkddk -&gt; kk + dd + k 혹은 kk+ ddk</p>
+<p>ddddk -&gt; dd + ddk 혹은 dddd + k
+kkkkd -&gt; kk + kkd 혹은 kkkk + d</p>
+<p>dkkkd -&gt; d + kkk + d 혹은 dkkk + d
+kdddk -&gt; k + ddd + k 혹은 kddd + k</p>
+<p>dkddk -&gt; dk + ddk
+kdkkd -&gt; kd + kkd</p>
+<p>dkkdk -&gt; dkk + dk
+kddkd -&gt; kdd + kd</p>
+<p>dkkkk -&gt; d + kkkk
+kdddd -&gt; k + dddd</p>
+<p align="center"> <img src="./frfr.png"> </p>
+<p>(F=시작손, R=반대손)</p>
+<p>6연타 이후도 비슷한 방법으로 잘라서 읽은 뒤 그대로 처리하시면 됩니다.</p>
+<p>잘라서 읽는것은 앞으로도 정말 중요한 기술이니 연습을 많이 하면 좋습니다.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../play/intermediate/triplet/main.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../../play/intermediate/stream/main.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../play/intermediate/triplet/main.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../../play/intermediate/stream/main.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
